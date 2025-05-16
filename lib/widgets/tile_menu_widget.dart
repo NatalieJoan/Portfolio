@@ -40,15 +40,15 @@ class _TileMenuWidgetState extends State<TileMenuWidget> {
                 : null,
           borderRadius: BorderRadius.circular(10),
           border: !(widget.isSelected || isHovered) 
-            ? Border.all(color: Colors.black)
-            : Border.all(color: Colors.white),
+            ? Border.all(width: 1.0, color: Colors.black)
+            : Border.all(width: 2.0, color: Colors.white),
         ),
         child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 40),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
