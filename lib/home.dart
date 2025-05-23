@@ -14,35 +14,62 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: ResponsiveContent(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'WELCOME',
-                style: GoogleFonts.lilitaOne(fontSize: 64),
-                ),
-              const SizedBox(height: 12),
-              const Text(
-                "I'm Natalie Helak\nPHP developer | PostgreSQL | UI/UX Designer",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
-              ),
-              const SizedBox(height: 48),
-              Expanded(
-                child: Wrap(
-                  spacing: 200,
-                  runSpacing: 50,
-                  alignment: WrapAlignment.center,
-                  runAlignment: WrapAlignment.center,
+          child: LayoutBuilder(
+            builder: (context, constrainsts) {
+              final width = constrainsts.maxWidth;
+
+              TileSizeType tileSize;
+              double spacing;
+              bool useColumnLayout = false;
+
+              if (width < 600) {
+                tileSize = TileSizeType.large;
+                useColumnLayout = true;
+                spacing = 0;
+              } else if (width < 1152) {
+                tileSize = TileSizeType.medium;
+                spacing = 50;
+              } else {
+                tileSize = TileSizeType.small;
+                spacing = 200;
+              }
+
+              final tiles = [
+                TileWidget(label: 'About', iconPath: 'assets/icons/home/About.png', onPressed: () => context.go('/about'), sizeType: tileSize),
+                TileWidget(label: 'Projects', iconPath: 'assets/icons/home/Projects.png', onPressed: () => context.go('/projects'), sizeType: tileSize),
+                TileWidget(label: 'Experience', iconPath: 'assets/icons/home/Experience.png', onPressed: () => context.go('/experience'), sizeType: tileSize),
+                TileWidget(label: 'Contact', iconPath: 'assets/icons/home/Contact.png', onPressed: () => context.go('/contact'), sizeType: tileSize),
+              ];
+
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TileWidget(label: 'About', onPressed: () => context.go('/about'), iconPath: 'assets/icons/home/About.png'),
-                    TileWidget(label: 'Projects', onPressed: () => context.go('/projects'), iconPath: 'assets/icons/home/Projects.png'),
-                    TileWidget(label: 'Experience', onPressed: () => context.go('/experience'), iconPath: 'assets/icons/home/Experience.png'),
-                    TileWidget(label: 'Contact', onPressed: () => context.go('/contact'), iconPath: 'assets/icons/home/Contact.png'),
+                    Text(
+                      "I'm Natalia Helak",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lilitaOne(fontSize: 64),
+                    ),
+                    Text(
+                      'PHP developer | PostgreSQL | UI/UX Designer',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 48),
+                    useColumnLayout
+                    ? Column(
+                        children: tiles.map((t) => Padding(padding: const EdgeInsets.symmetric(vertical: 10), child: t)).toList(),
+                      )
+                    : Wrap(
+                      spacing: spacing,
+                      runSpacing: spacing,
+                      alignment: WrapAlignment.center,
+                      children: tiles,
+                    ),
                   ],
                 ),
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),

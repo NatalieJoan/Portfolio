@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class InfoCardWidget extends StatefulWidget {
+class SkillCardWidget extends StatefulWidget {
   final String iconPath;
   final String text;
 
-  const InfoCardWidget({
+  const SkillCardWidget({
     super.key,
     required this.iconPath,
     required this.text
   });
 
   @override
-  State<InfoCardWidget> createState() => _InfoCardWidgetState();
+  State<SkillCardWidget> createState() => _SkillCardWidgetState();
 }
 
-class _InfoCardWidgetState extends State<InfoCardWidget> {
+class _SkillCardWidgetState extends State<SkillCardWidget> {
   bool isHovered = false;
 
   @override
@@ -29,8 +29,8 @@ class _InfoCardWidgetState extends State<InfoCardWidget> {
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
         margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 16),
         decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: isHovered ? Color(0xFF8231B2) : Colors.black12,
@@ -38,8 +38,9 @@ class _InfoCardWidgetState extends State<InfoCardWidget> {
               offset: Offset(0, 0),
             ),
           ],
+          
         ),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
