@@ -5,14 +5,12 @@ class TileWidget extends StatefulWidget {
   final String label;
   final VoidCallback onPressed;
   final String iconPath;
-  final TileSizeType sizeType;
 
   const TileWidget({
     super.key,
     required this.label,
     required this.onPressed,
     required this.iconPath,
-    this.sizeType = TileSizeType.medium,
     });
 
     @override
@@ -30,27 +28,6 @@ class _TileWidgetState extends State<TileWidget> {
   
   @override
   Widget build(BuildContext context) {
-    double widthFactor;
-    double heightFactor;
-
-    switch (widget.sizeType) {
-      case TileSizeType.large:
-        widthFactor = 0.9;
-        heightFactor = 0.25;
-        break;
-      case TileSizeType.medium:
-        widthFactor = 0.4;
-        heightFactor = 0.22;
-        break;
-      case TileSizeType.small:
-        widthFactor = 0.25;
-        heightFactor = 0.25;
-        break;
-    }
-
-    double width = MediaQuery.of(context).size.width * widthFactor;
-    double height = MediaQuery.of(context).size.height * heightFactor;
-
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => isHovered = true),
@@ -59,8 +36,8 @@ class _TileWidgetState extends State<TileWidget> {
         onTap: widget.onPressed,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          width: width,
-          height: height,
+          // width: MediaQuery.of(context).size.width * 0.4,
+          // height: MediaQuery.of(context).size.height * 0.3,
           padding: const EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),

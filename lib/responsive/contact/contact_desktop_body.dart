@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/styles/gradient_layout.dart';
-import 'package:portfolio/styles/responsive_content.dart';
-import 'package:portfolio/widgets/app_bar_widget.dart';
 import 'package:portfolio/widgets/form_field_widget.dart';
 import 'package:portfolio/widgets/menu_nawigation.dart';
 import 'package:portfolio/widgets/social_media_widget.dart';
 
-class Contact extends StatelessWidget {
-  const Contact({super.key});
+class ContactDesktopBody extends StatelessWidget {
+  const ContactDesktopBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GradientLayout(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBarWidget(title: 'Contact'),
-        body: ResponsiveContent(
-          child: Row(
+        appBar: AppBar(title: const Text('Contact')
+        ),
+        body: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               MenuNawigation(),
@@ -35,7 +32,6 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
-        ),
       ),
     );
   }
