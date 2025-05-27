@@ -24,10 +24,10 @@ class _SkillCardWidgetState extends State<SkillCardWidget> {
       onExit: (_) => setState(() => isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        transform: Matrix4.translationValues(isHovered? -20.0 : 0.0, 0.0, 0.0),
+        transform: Matrix4.translationValues(isHovered? 10.0 : 0.0, 0.0, 0.0),
         curve: Curves.easeInOut,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
@@ -49,9 +49,13 @@ class _SkillCardWidgetState extends State<SkillCardWidget> {
               height: MediaQuery.of(context).size.height * 0.08,
             ),
             SizedBox(width: 14),
-            Text(
-              widget.text,
-              style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.5),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 5.0),
+              child: Text(
+                widget.text,
+                style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.5),
+                textAlign: TextAlign.center
+              ),
             ),
           ],
         ),

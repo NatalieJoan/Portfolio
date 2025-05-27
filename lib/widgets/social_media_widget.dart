@@ -5,12 +5,14 @@ class SocialMediaWidget extends StatefulWidget {
   final String label;
   final String url;
   final String iconPath;
+  final String iconPathHovered;
 
   const SocialMediaWidget({
     super.key, 
     required this.label, 
     required this.url,
-    required this.iconPath
+    required this.iconPath,
+    required this.iconPathHovered
   });
 
   @override
@@ -40,7 +42,7 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           duration: Duration(microseconds: 300),
           child: Column(
             children: [
-              Image.asset(widget.iconPath, width: 40, height: 40),
+              Image.asset(isHovered ? widget.iconPathHovered : widget.iconPath, width: 40, height: 40),
               SizedBox(height: 12),
               Text(widget.label, style: TextStyle(color: isHovered ? Colors.white : Colors.black87))
             ]

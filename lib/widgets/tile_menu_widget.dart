@@ -29,7 +29,7 @@ class _TileMenuWidgetState extends State<TileMenuWidget> {
         duration: const Duration(milliseconds: 300),
         padding: const EdgeInsets.symmetric(horizontal: 2),
         margin: const EdgeInsets.symmetric(vertical: 4),
-        width: 172,
+        width: 150,
         decoration: BoxDecoration(
           gradient: widget.isSelected 
             ? AppColors.purpleGradient
@@ -40,15 +40,15 @@ class _TileMenuWidgetState extends State<TileMenuWidget> {
                 : null,
           borderRadius: BorderRadius.circular(10),
           border: !(widget.isSelected || isHovered) 
-            ? Border.all(width: 1.0, color: Colors.black)
-            : Border.all(width: 2.0, color: Colors.white),
+            ? Border.all(color: Colors.black)
+            : Border.all(color: Colors.white),
         ),
         child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -56,7 +56,7 @@ class _TileMenuWidgetState extends State<TileMenuWidget> {
           child: Text(
             widget.label.toUpperCase(), 
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
               color: !(widget.isSelected || isHovered) ? Colors.black : Colors.white
             ),
           ),

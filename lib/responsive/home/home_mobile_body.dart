@@ -32,14 +32,13 @@ class HomeMobileBody extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, letterSpacing: 2.5),
               ),
-              
               Expanded(
                 child: ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Column(
+                      child: Row(
                         children: tiles.map((t) => Padding(padding: const EdgeInsets.symmetric(vertical: 10), child: t)).toList(),
                       ),
                     );

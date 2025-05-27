@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/styles/gradient_layout.dart';
+import 'package:portfolio/widgets/scaffold_layout_widget.dart';
 
 class ProjectsDesktopBody extends StatelessWidget {
   const ProjectsDesktopBody({super.key});
@@ -7,10 +8,7 @@ class ProjectsDesktopBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientLayout(
-      child: Scaffold(
-        appBar: AppBar(title: const Text('Projects')
-        ),
-      ),
+      child: ScaffoldLayoutWidget(title: 'Projects'),
     );
   }
 }

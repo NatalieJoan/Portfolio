@@ -36,8 +36,6 @@ class _TileWidgetState extends State<TileWidget> {
         onTap: widget.onPressed,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          // width: MediaQuery.of(context).size.width * 0.4,
-          // height: MediaQuery.of(context).size.height * 0.3,
           padding: const EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
@@ -50,11 +48,11 @@ class _TileWidgetState extends State<TileWidget> {
             children: [
               Image.asset(
                 widget.iconPath,
-                width:  MediaQuery.of(context).size.width * 0.1,
-                height: MediaQuery.of(context).size.height * 0.1,
+                width:  MediaQuery.of(context).size.width * 0.15,
+                height: MediaQuery.of(context).size.height * 0.15,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 14),
+                padding: const EdgeInsets.only(top: 24),
                 child: Text(
                   widget.label.toUpperCase(),
                   style: const TextStyle(color: Colors.white, fontSize: 16),
