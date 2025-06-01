@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/styles/gradient_layout.dart';
+import 'package:portfolio/widgets/mobile_footer_widget.dart';
 import 'package:portfolio/widgets/tile_widget.dart';
 
 class HomeMobileBody extends StatelessWidget {
@@ -38,7 +39,7 @@ class HomeMobileBody extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Row(
+                      child: Column(
                         children: tiles.map((t) => Padding(padding: const EdgeInsets.symmetric(vertical: 10), child: t)).toList(),
                       ),
                     );
@@ -48,6 +49,7 @@ class HomeMobileBody extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: MobileFooterWidget(),
       ),
     );
   }

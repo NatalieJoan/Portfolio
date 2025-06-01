@@ -5,7 +5,7 @@ class AppColors {
       begin: Alignment(-0.34, 0.50),
       end: Alignment(1.34, 0.50),
       colors: [
-        Color(0xFFFFE394),
+        Color.fromARGB(209, 234, 211, 149),
         Color(0xFFE9BE94),
         Color(0xFFD69A5F),
       ],

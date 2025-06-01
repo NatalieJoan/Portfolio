@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 
-class FooterWidget extends StatelessWidget {
-  const FooterWidget({super.key});
+class MobileFooterWidget extends StatelessWidget {
+  const MobileFooterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       color: Colors.black87,
-      child: Column(
+      child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Icon(Icons.copyright_outlined, color: Colors.white),
-          SizedBox(width: 12),
-          const Text(
-            '2025 Natalia Helak', 
-            style: TextStyle(color: Colors.white, fontSize: 16)
+          Row(
+            children: [
+              Icon(Icons.copyright_outlined, color: Colors.white),
+              SizedBox(width: 12),
+              const Text(
+                '2025 Natalia Helak', 
+                style: TextStyle(color: Colors.white, fontSize: 16)
+              ),
+            ],
           ),
-          Column(
+          Row(
             children: [
               IconButton(
                 onPressed: () {
