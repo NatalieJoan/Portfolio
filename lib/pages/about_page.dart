@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/responsive/about/about_desktop_body.dart';
+import 'package:portfolio/responsive/about/about_desktop_content.dart';
 import 'package:portfolio/responsive/about/about_mobile_body.dart';
+import 'package:portfolio/responsive/desktop_content.dart';
 import 'package:portfolio/responsive/responsive_layout.dart';
 
 class AboutPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _AboutPageState extends State<AboutPage> {
     return Scaffold(
       body: ResponsiveLayout(
         mobileBody: AboutMobileBody(), 
-        desktopBody: AboutDesktopBody()
+        desktopBody: DesktopContent(appBarText: 'About', content: AboutDesktopContent())
       ),
     );
   }

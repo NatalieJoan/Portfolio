@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/responsive/desktop_content.dart';
 import 'package:portfolio/responsive/projects/projects_desktop_body.dart';
 import 'package:portfolio/responsive/projects/projects_mobile_body.dart';
 import 'package:portfolio/responsive/responsive_layout.dart';
@@ -16,7 +17,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return Scaffold(
       body: ResponsiveLayout(
         mobileBody: ProjectsMobileBody(), 
-        desktopBody: ProjectsDesktopBody()
+        desktopBody: DesktopContent(appBarText: 'Projects', content: ProjectsDesktopBody()),
       ),
     );
   }

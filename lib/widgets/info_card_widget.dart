@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class InfoCardWidget extends StatefulWidget {
   final String iconPath;
   final String text;
+  final bool isLeftSide;
 
   const InfoCardWidget({
     super.key,
     required this.iconPath,
-    required this.text
+    required this.text,
+    required this.isLeftSide,
   });
 
   @override
@@ -24,10 +26,10 @@ class _InfoCardWidgetState extends State<InfoCardWidget> {
       onExit: (_) => setState(() => isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        transform: Matrix4.translationValues(isHovered? -20.0 : 0.0, 0.0, 0.0),
+        transform: Matrix4.translationValues(isHovered ? (widget.isLeftSide ? 20.0 : -20.0) : 0.0, 0.0, 0.0),
         curve: Curves.easeInOut,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 16),
+        margin: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -40,14 +42,15 @@ class _InfoCardWidgetState extends State<InfoCardWidget> {
           ],
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               widget.iconPath,
               width: MediaQuery.of(context).size.width * 0.08,
               height: MediaQuery.of(context).size.height * 0.08,
             ),
-            SizedBox(width: 14),
+            SizedBox(width: 10),
             Text(
               widget.text,
               style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.5),
