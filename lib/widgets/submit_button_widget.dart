@@ -10,7 +10,7 @@ class SubmitButtonWidget extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.isSelected = false,
-    super.key
+    super.key,
   });
 
   @override
@@ -20,9 +20,8 @@ class SubmitButtonWidget extends StatefulWidget {
 class _SubmitButtonWidgetState extends State<SubmitButtonWidget> {
   bool isHovered = false;
 
-    Gradient get currentGradient => isHovered
-    ? AppColors.yellowGradient
-    : AppColors.purpleGradient;
+  Gradient get currentGradient =>
+      isHovered ? AppColors.yellowGradient : AppColors.purpleGradient;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class _SubmitButtonWidgetState extends State<SubmitButtonWidget> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         padding: const EdgeInsets.symmetric(horizontal: 2),
-        margin: const EdgeInsets.symmetric(vertical: 4),
+        margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
         width: 172,
         decoration: BoxDecoration(
           gradient: currentGradient,
@@ -44,17 +43,20 @@ class _SubmitButtonWidgetState extends State<SubmitButtonWidget> {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: Text(
-            widget.label.toUpperCase(), 
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.white
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                widget.label.toUpperCase(),
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+              Icon(Icons.send_rounded, color: Colors.white),
+            ],
           ),
         ),
       ),

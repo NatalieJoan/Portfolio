@@ -12,24 +12,25 @@ class ContactDesktopBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SocialMediaWidget(
                 label: 'Linkedin',
-                url: 'https://www.linkedin.com/',
+                url: 'https://www.linkedin.com/in/natalia-helak-php-developer/',
                 iconPath: 'assets/icons/contact/Linkedin_black.png',
                 iconPathHovered: 'assets/icons/contact/Linkedin_white.png',
               ),
               SizedBox(width: 24),
               SocialMediaWidget(
-                label: 'Linkedin',
-                url: 'https://www.linkedin.com/',
+                label: 'Github',
+                url: 'https://github.com/NatalieJoan/',
                 iconPath: 'assets/icons/contact/Github_black.png',
                 iconPathHovered: 'assets/icons/contact/Github_white.png',
               ),
               SizedBox(width: 24),
               SocialMediaWidget(
-                label: 'Linkedin',
-                url: 'https://www.linkedin.com/',
+                label: 'Gitlab',
+                url: 'https://www.gitlab.com/',
                 iconPath: 'assets/icons/contact/Gitlab_black.png',
                 iconPathHovered: 'assets/icons/contact/Gitlab_white.png',
               ),

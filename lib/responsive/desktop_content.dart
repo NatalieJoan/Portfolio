@@ -10,7 +10,7 @@ class DesktopContent extends StatelessWidget {
 
   const DesktopContent({
     super.key,
-    required this.content, 
+    required this.content,
     required this.appBarText,
   });
 
@@ -19,31 +19,26 @@ class DesktopContent extends StatelessWidget {
     return GradientLayout(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBarWidget(
-          title: appBarText
-        ),
-        body: Column(
-          children: [
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 144.0, vertical: 24),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 200,
-                    height: 400,
-                    child: MenuNawigation(),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 1152),
-                        child: content,
-                      ),
+        appBar: AppBarWidget(title: appBarText),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 144.0, vertical: 24),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(width: 220, child: MenuNawigation()),
+              const SizedBox(width: 24),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 1152),
+                      child: content,
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         bottomNavigationBar: FooterWidget(),
       ),

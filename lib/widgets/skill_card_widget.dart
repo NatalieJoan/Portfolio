@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class SkillCardWidget extends StatefulWidget {
   final String iconPath;
   final String text;
+  final bool isUp;
 
   const SkillCardWidget({
     super.key,
     required this.iconPath,
-    required this.text
+    required this.text,
+    required this.isUp
   });
 
   @override
@@ -24,7 +26,7 @@ class _SkillCardWidgetState extends State<SkillCardWidget> {
       onExit: (_) => setState(() => isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        transform: Matrix4.translationValues(isHovered? 10.0 : 0.0, 0.0, 0.0),
+        transform: Matrix4.translationValues(0.0, isHovered ? (widget.isUp ? 10.0 : -10.0) : 0.0, 0.0),
         curve: Curves.easeInOut,
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         margin: const EdgeInsets.symmetric(horizontal: 10),
