@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/styles/app_icons_and_images.dart';
+import 'package:portfolio/styles/app_links.dart';
 import 'package:portfolio/widgets/form_field_widget.dart';
 import 'package:portfolio/widgets/social_media_widget.dart';
 
@@ -16,23 +18,23 @@ class ContactDesktopBody extends StatelessWidget {
             children: [
               SocialMediaWidget(
                 label: 'Linkedin',
-                url: 'https://www.linkedin.com/in/natalia-helak-php-developer/',
-                iconPath: 'assets/icons/contact/Linkedin_black.png',
-                iconPathHovered: 'assets/icons/contact/Linkedin_white.png',
+                url: ContactLinks.linkedinLink,
+                iconPath: ContactIcons.linkedinIcon,
+                iconPathHovered: ContactIcons.linkedinIconHovered,
               ),
               SizedBox(width: 24),
               SocialMediaWidget(
                 label: 'Github',
-                url: 'https://github.com/NatalieJoan/',
-                iconPath: 'assets/icons/contact/Github_black.png',
-                iconPathHovered: 'assets/icons/contact/Github_white.png',
+                url: ContactLinks.githubLink,
+                iconPath: ContactIcons.githubIcon,
+                iconPathHovered: ContactIcons.githubIconHovered,
               ),
               SizedBox(width: 24),
               SocialMediaWidget(
                 label: 'Gitlab',
-                url: 'https://www.gitlab.com/',
-                iconPath: 'assets/icons/contact/Gitlab_black.png',
-                iconPathHovered: 'assets/icons/contact/Gitlab_white.png',
+                url: ContactLinks.gitlabLink,
+                iconPath: ContactIcons.gitlabIcon,
+                iconPathHovered: ContactIcons.gitlabIconHovered,
               ),
             ],
           ),

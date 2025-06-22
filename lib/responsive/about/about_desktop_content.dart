@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/styles/app_text.dart';
-import 'package:portfolio/styles/icons.dart';
+import 'package:portfolio/styles/app_texts.dart';
+import 'package:portfolio/styles/app_icons_and_images.dart';
 import 'package:portfolio/widgets/info_card_widget.dart';
 
 class AboutDesktopContent extends StatelessWidget {
@@ -15,28 +15,28 @@ class AboutDesktopContent extends StatelessWidget {
         Column(
           children: [
             InfoCardWidget(
-              iconPath: AppIcons.universityIcon,
-              text: AppText.universityText, 
+              iconPath: AboutIcons.universityIcon,
+              text: AboutDescription.universityText, 
               isLeftSide: true,
             ),
             InfoCardWidget(
-              iconPath: AppIcons.workIcon,
-              text:  AppText.workText,
+              iconPath: AboutIcons.workIcon,
+              text:  AboutDescription.workText,
               isLeftSide: false,
             ),
             InfoCardWidget(
-              iconPath: AppIcons.designIcon,
-              text:  AppText.designText,
+              iconPath: AboutIcons.designIcon,
+              text:  AboutDescription.designText,
               isLeftSide: true,
             ),
             InfoCardWidget(
-              iconPath: AppIcons.artIcon,
-              text:  AppText.artText,
+              iconPath: AboutIcons.artIcon,
+              text:  AboutDescription.artText,
               isLeftSide: false,
             ),
             InfoCardWidget(
-              iconPath: AppIcons.petIcon,
-              text:  AppText.petText,
+              iconPath: AboutIcons.petIcon,
+              text:  AboutDescription.petText,
               isLeftSide: true,
             ),
           ],
