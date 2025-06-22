@@ -5,7 +5,7 @@ class ProjectCard extends StatefulWidget {
   final String role;
   final String description;
   final List<String> technologies;
-  final String? figmaLink;
+  final String figmaLink;
   final List<String> imagePaths;
 
   const ProjectCard({
@@ -14,7 +14,7 @@ class ProjectCard extends StatefulWidget {
     required this.role,
     required this.description,
     required this.technologies,
-    this.figmaLink,
+    required this.figmaLink,
     required this.imagePaths,
   });
 
@@ -24,7 +24,6 @@ class ProjectCard extends StatefulWidget {
 
 class _ProjectCardState extends State<ProjectCard> {
   bool _isHovered = false;
-  bool _isExpanded = false;
 
   void _showImageDialog(String path) {
     showDialog(
@@ -51,47 +50,42 @@ class _ProjectCardState extends State<ProjectCard> {
         decoration: BoxDecoration(
           color: _isHovered ? Colors.white70 : Colors.white60,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: _isHovered ? Colors.purple : Colors.orangeAccent),
+          border: Border.all(
+            color: _isHovered ? Colors.purple : Colors.orangeAccent,
+          ),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.title,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(
+              widget.title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 4),
             Text(widget.role, style: const TextStyle(color: Colors.grey)),
             const SizedBox(height: 12),
-            GestureDetector(
-              onTap: () => setState(() => _isExpanded = !_isExpanded),
-              child: AnimatedCrossFade(
-                firstChild: const SizedBox.shrink(),
-                secondChild: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(widget.description),
-                ),
-                crossFadeState: _isExpanded
-                    ? CrossFadeState.showSecond
-                    : CrossFadeState.showFirst,
-                duration: const Duration(milliseconds: 300),
-              ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(widget.description),
             ),
             const SizedBox(height: 12),
             Wrap(
               spacing: 8,
               runSpacing: 4,
-              children: widget.technologies
-                  .map((tech) => Chip(label: Text(tech)))
-                  .toList(),
+              children:
+                  widget.technologies
+                      .map((tech) => Chip(label: Text(tech)))
+                      .toList(),
             ),
-            if (widget.figmaLink != null) ...[
+            ...[
               const SizedBox(height: 12),
               TextButton.icon(
                 onPressed: () {
-                  // url_launcher
+                  widget.figmaLink;
                 },
                 icon: const Icon(Icons.link),
-                label: const Text('Zobacz w Figmie'),
+                label: const Text('Link to Figma'),
               ),
             ],
             const SizedBox(height: 16),
