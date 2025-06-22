@@ -9,7 +9,18 @@ class ContactDesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 40),
+        width: double.infinity,
+        constraints: const BoxConstraints(maxWidth: 1200),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        decoration: BoxDecoration(
+          color: Colors.white60,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: Colors.purple,
+          ),
+        ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

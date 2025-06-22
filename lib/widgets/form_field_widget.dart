@@ -34,7 +34,6 @@ class _FormFieldWidgetState extends State<FormFieldWidget> {
               },
             ),
           ),
-          const SizedBox(height: 12),
           SizedBox(
             width: 500,
             child: TextFormField(
@@ -52,7 +51,7 @@ class _FormFieldWidgetState extends State<FormFieldWidget> {
               },
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 15),
           SubmitButtonWidget(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
