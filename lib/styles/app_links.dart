@@ -11,3 +11,8 @@ class ContactLinks {
   static const String githubLink = 'https://github.com/NatalieJoan/';
   static const String gitlabLink = 'https://www.gitlab.com/';
 }
+
+class CertificateLinks {
+  static const String vueCertificateLink =
+      'https://cert.nobleprog.com/certificate/763543/4f790';
+}
