@@ -30,15 +30,15 @@ class FooterWidget extends StatelessWidget {
               Padding(padding: const EdgeInsets.symmetric(horizontal: 16.0)),
               IconButtonWidget(
                 icon: ContactIcons.linkedinIconHovered,
-                onPressed: ContactLinks.linkedinLink,
+                url: ContactLinks.linkedinLink,
               ),
               IconButtonWidget(
                 icon: ContactIcons.githubIconHovered,
-                onPressed: ContactLinks.githubLink,
+                url: ContactLinks.githubLink,
               ),
               IconButtonWidget(
                 icon: ContactIcons.gitlabIconHovered,
-                onPressed: ContactLinks.gitlabLink,
+                url: ContactLinks.gitlabLink,
               ),
             ],
           ),

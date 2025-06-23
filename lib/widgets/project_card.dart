@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatefulWidget {
   final String title;
@@ -28,12 +29,13 @@ class _ProjectCardState extends State<ProjectCard> {
   void _showImageDialog(String path) {
     showDialog(
       context: context,
-      builder: (_) => Dialog(
-        insetPadding: const EdgeInsets.all(24),
-        child: InteractiveViewer(
-          child: Image.asset(path, fit: BoxFit.contain),
-        ),
-      ),
+      builder:
+          (_) => Dialog(
+            insetPadding: const EdgeInsets.all(24),
+            child: InteractiveViewer(
+              child: Image.asset(path, fit: BoxFit.contain),
+            ),
+          ),
     );
   }
 
@@ -81,8 +83,13 @@ class _ProjectCardState extends State<ProjectCard> {
             ...[
               const SizedBox(height: 12),
               TextButton.icon(
-                onPressed: () {
-                  widget.figmaLink;
+                onPressed: () async {
+                  final uri = Uri.parse(widget.figmaLink);
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  } else {
+                    throw 'Could not launch app';
+                  }
                 },
                 icon: const Icon(Icons.link),
                 label: const Text('Link to Figma'),
