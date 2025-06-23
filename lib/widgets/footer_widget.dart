@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/styles/app_icons_and_images.dart';
+import 'package:portfolio/styles/app_links.dart';
 import 'package:portfolio/widgets/icon_button_widget.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -18,17 +20,26 @@ class FooterWidget extends StatelessWidget {
               Icon(Icons.copyright_outlined, color: Colors.white),
               SizedBox(width: 12.0),
               const Text(
-                '2025 Natalia Helak', 
-                style: TextStyle(color: Colors.white, fontSize: 16.0)
+                '2025 Natalia Helak',
+                style: TextStyle(color: Colors.white, fontSize: 16.0),
               ),
             ],
           ),
           Row(
             children: [
               Padding(padding: const EdgeInsets.symmetric(horizontal: 16.0)),
-              IconButtonWidget(icon: 'assets/icons/contact/Linkedin_white.png', onPressed: 'https://www.linkedin.com/'),
-              IconButtonWidget(icon: 'assets/icons/contact/Github_white.png', onPressed: 'https://www.linkedin.com/'),
-              IconButtonWidget(icon: 'assets/icons/contact/Gitlab_white.png', onPressed: 'https://www.linkedin.com/'),
+              IconButtonWidget(
+                icon: ContactIcons.linkedinIconHovered,
+                onPressed: ContactLinks.linkedinLink,
+              ),
+              IconButtonWidget(
+                icon: ContactIcons.githubIconHovered,
+                onPressed: ContactLinks.githubLink,
+              ),
+              IconButtonWidget(
+                icon: ContactIcons.gitlabIconHovered,
+                onPressed: ContactLinks.gitlabLink,
+              ),
             ],
           ),
         ],

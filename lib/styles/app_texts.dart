@@ -25,3 +25,10 @@ class ProjectTechnologies {
   static List<String> engineeringProjectTechnologies = ['Flutter', 'Figma', 'Dart'];
   static List<String> coffeeWebsiteTechnologies = ['Figma', 'UI/UX Design', 'Responsive Design'];
 }
+
+class SkillTechnology {
+  static String webDesign = 'Figma\nFlutter';
+  static String experience = 'PHP\nLaravel';
+  static String database = 'PostgreSQL\nMySQL';
+  static String technicalGears = 'Jira\nDBeaver';
+}

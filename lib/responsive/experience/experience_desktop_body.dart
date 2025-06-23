@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/styles/app_icons_and_images.dart';
+import 'package:portfolio/styles/app_texts.dart';
 import 'package:portfolio/widgets/experience_timeline.dart';
 import 'package:portfolio/widgets/skill_card_widget.dart';
 
@@ -7,43 +9,32 @@ class ExperienceDesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      direction: Axis.vertical,
-      alignment: WrapAlignment.center,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Column(
+        SizedBox(width: 600, height: 300, child: ExperienceTimeline()),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 600,
-              height: 280,
-              child: ExperienceTimeline(),
+            SkillCardWidget(
+              iconPath: SkillIcons.webDesignIcon,
+              text: SkillTechnology.webDesign,
+              isUp: true,
             ),
-            SizedBox(height: 10),
-            SizedBox(
-              child: Row(
-                children: [
-                  SkillCardWidget(
-                    iconPath: 'assets/icons/experience/Web_design.png',
-                    text: 'Figma\nFlutter',
-                    isUp: true,
-                  ),
-                  SkillCardWidget(
-                    iconPath: 'assets/icons/experience/Experience_black.png',
-                    text: 'PHP\nLaravel',
-                    isUp: false,
-                  ),
-                  SkillCardWidget(
-                    iconPath: 'assets/icons/experience/Database.png',
-                    text: 'PostgreSQL\nMySQL',
-                    isUp: true,
-                  ),
-                  SkillCardWidget(
-                    iconPath: 'assets/icons/experience/Technical_gears.png',
-                    text: 'Jira\nDBeaver',
-                    isUp: false,
-                  ),
-                ],
-              ),
+            SkillCardWidget(
+              iconPath: SkillIcons.experienceIcon,
+              text: SkillTechnology.experience,
+              isUp: false,
+            ),
+            SkillCardWidget(
+              iconPath: SkillIcons.databaseIcon,
+              text: SkillTechnology.database,
+              isUp: true,
+            ),
+            SkillCardWidget(
+              iconPath: SkillIcons.technicalGearsIcon,
+              text: SkillTechnology.technicalGears,
+              isUp: false,
             ),
           ],
         ),

@@ -20,6 +20,13 @@ class ProjectImages {
   ];
 }
 
+class SkillIcons {
+  static String webDesignIcon = 'assets/icons/experience/Web_design.png';
+  static String experienceIcon = 'assets/icons/experience/Experience_black.png';
+  static String databaseIcon = 'assets/icons/experience/Database.png';
+  static String technicalGearsIcon = 'assets/icons/experience/Technical_gears.png';
+}
+
 class ContactIcons {
   static String linkedinIcon = 'assets/icons/contact/Linkedin_black.png';
   static String githubIcon = 'assets/icons/contact/Github_black.png';

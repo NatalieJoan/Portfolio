@@ -28,8 +28,8 @@ class DesktopContent extends StatelessWidget {
               SizedBox(width: 220, child: MenuNawigation()),
               const SizedBox(width: 24),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Center(
+                child: Center(
+                  child: SingleChildScrollView(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1152),
                       child: content,
