@@ -24,8 +24,9 @@ class IconButtonWidget extends StatelessWidget {
       },
       icon: Image.asset(
         icon,
-        width: MediaQuery.of(context).size.width * 0.05,
-        height: MediaQuery.of(context).size.height * 0.05),
+        width: MediaQuery.of(context).size.width * 0.04,
+        height: MediaQuery.of(context).size.height * 0.04,
+      ),
     );
   }
 }

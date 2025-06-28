@@ -3,8 +3,8 @@ import 'package:portfolio/styles/app_texts.dart';
 import 'package:portfolio/styles/app_icons_and_images.dart';
 import 'package:portfolio/widgets/info_card_widget.dart';
 
-class AboutDesktopContent extends StatelessWidget {
-  const AboutDesktopContent({super.key});
+class AboutDesktopBody extends StatelessWidget {
+  const AboutDesktopBody({super.key});
 
   @override
   Widget build(BuildContext context) {

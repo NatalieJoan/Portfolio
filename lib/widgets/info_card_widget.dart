@@ -28,7 +28,7 @@ class _InfoCardWidgetState extends State<InfoCardWidget> {
         duration: const Duration(milliseconds: 300),
         transform: Matrix4.translationValues(isHovered ? (widget.isLeftSide ? 20.0 : -20.0) : 0.0, 0.0, 0.0),
         curve: Curves.easeInOut,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 40),
         margin: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white,

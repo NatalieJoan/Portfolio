@@ -37,10 +37,7 @@ class HomeDesktopBody extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 32.0,
-            vertical: 24.0,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0),
           child: Column(
             children: [
               Column(
@@ -49,7 +46,10 @@ class HomeDesktopBody extends StatelessWidget {
                   Text(
                     "I'm Natalia Helak".toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.lilitaOne(fontSize: 52, letterSpacing: 2.0),
+                    style: GoogleFonts.lilitaOne(
+                      fontSize: 52,
+                      letterSpacing: 2.0,
+                    ),
                   ),
                   Text(
                     'PHP Developer | PostgreSQL | UI/UX Designer',
@@ -58,19 +58,38 @@ class HomeDesktopBody extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1152), 
-                    child: Wrap(
-                      spacing: 40,
-                      runSpacing: 40,
-                      alignment: WrapAlignment.spaceAround,
-                      children: tiles,
+              const SizedBox(height: 40),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 40.0),
+                padding: const EdgeInsets.all(50.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [tiles[0], tiles[1]],
                     ),
-                  ),
+                    SizedBox(height: 60),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [tiles[2], tiles[3]],
+                    ),
+                  ],
                 ),
               ),
+
+              // Expanded(
+              //   child: Center(
+              //     child: ConstrainedBox(
+              //       constraints: const BoxConstraints(maxWidth: 1152),
+              //       child: Wrap(
+              //         spacing: 40,
+              //         runSpacing: 40,
+              //         alignment: WrapAlignment.spaceAround,
+              //         children: tiles,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
